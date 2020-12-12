@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+  <title>Famous Astronauts</title>
+  <!-- Main app.css -->
+  <style>
+    body {
+      padding-top: 56px;
+    }
+
+    .main_astronaut_img{
+        width: 400px;
+        height:450px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    #main_nav{
+        background-color: #0B3D91 !important;
+    }
+
+    #admin_nav{
+        background-color: #667AFA !important;
+    }
+
+    #main_footer{
+        background-color: #0B3D91 !important;
+    }
+
+    #admin_footer{
+        background-color: #667AFA !important;
+        width:100%;
+        position:fixed;
+        bottom:0;
+        left:0;
+    }
+
+    .title{
+        color: #2e151b;
+    }
+
+    .astronaut_image{
+        height: auto;
+        width: 90%;
+        /*margin: 0 auto;*/
+        /*display: block;*/
+        margin-top:3%;
+        margin-bottom: 5%;
+        border-radius: 10px;
+    }
+
+    /*.astronaut_image + p.lead{
+        display: inline;
+    }*/
+
+    .hr_style{
+        height: 1px;
+        color: #000;
+    }
+
+    .lead_in_list{
+        padding-top: 10%;
+    }
+
+    .list{
+        /*margin-left:10%;*/
+        margin-bottom:2%;
+    }
+
+    .mt-4{
+        color: #2e151b;
+        text-decoration: underline;
+    }
+
+    h2, .h2{
+        font-size: 1.8rem;
+    }
+
+    #login{
+        margin-top:100px;
+        margin-bottom:100px;
+    }
+
+    #register{
+        margin-bottom:100px;
+        margin-top:100px;
+    }
+
+    .form_header{
+        font-size:20px; 
+        color:#0B3D91;
+    }
+
+    .btn-color{
+        background-color:#0B3D91;
+        color:#fff;
+    }
+
+    #astronaut_table{
+        margin-bottom: 150px;
+    }
+
+    #create_form{
+        margin-top:25px;
+        margin-bottom:200px;
+    }
+
+    #edit_astronaut_image{
+        width: 200px;
+        height:250px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #email_container{
+        margin-top:150px;
+        margin-bottom:150px;
+    }
+</style>
+</head>
+
+<body>
+
+  
+  <header>
+    
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="main_nav">
+    <div class="container">
+      <a class="navbar-brand" href="/">FAMOUS ASTRONAUTS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link active" href="/astronauts">Astronauts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+                      <li class="nav-item">
+                <a class="nav-link" href="http://astronauts.saggers94.com/login">Login</a>
+            </li>
+                            <li class="nav-item">
+                    <a class="nav-link" href="http://astronauts.saggers94.com/register">Register</a>
+                </li>
+                              </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  </header>
+
+  <section>
+    <!-- Flash Message if success in any action -->
+
+<!-- Flash Message if error in any action -->
+        
+
+    <div class="container">
+      <div class="row">
+          
+    <!-- Content section for the list page of astronauts -->
+    <section class="list" id="app">
+      
+      <list-of-astronauts v-bind:astronauts="astronauts"></list-of-astronauts>
+      <div class="pagination justify-content-center mb-4">
+        
+        <nav>
+        <ul class="pagination">
+            
+                            <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                    <span class="page-link" aria-hidden="true">&lsaquo;</span>
+                </li>
+            
+            
+                            
+                
+                
+                                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                                                                                <li class="page-item"><a class="page-link" href="http://astronauts.saggers94.com/astronauts?page=2">2</a></li>
+                                                                        
+            
+                            <li class="page-item">
+                    <a class="page-link" href="http://astronauts.saggers94.com/astronauts?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+                </li>
+                    </ul>
+    </nav>
+
+
+      </div>
+
+    </section>
+  
+
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Footer -->
+  <footer class="py-5 bg-dark" id="main_footer">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+      Vue.component('list-of-astronauts',{
+        props: ['astronauts'],
+        template: `
+            <div class="container" >
+             <h1 class="mt-4">Top 10 Famous Astronauts</h1>
+             <hr class="hr_style"/>
+
+               
+               <div class="row" v-for="astronaut in astronauts" v-bind:key = "astronaut.id">
+                  <div class="col col-sm-4">
+                    <h2 class="mt-2">{{astronaut.name}}</h2>
+                    <img class="astronaut_image" v-bind:src="getImage(astronaut.image)" alt="Astronaut"/>
+                  </div>
+                  <div class="col col-sm-8">
+                    
+                    <p class="lead lead_in_list"><strong class="font-weight-bold">Personal Information: </strong>{{astronaut.personal_data}}</p>
+                    <p><a href="#" v-bind:click.prevent="openAstronautDetail(astronaut.slug)" alt="Detail about Astronaut">Read More</a></p>
+
+                  </div>
+              </div>
+              <hr class="hr_style"/>  
+            </div>
+
+        `,
+        methods:{
+            getImage: function(imageName){
+                return 'images/' + imageName;
+            },
+            openAstronautDetail:function(astronaut_slug){
+
+            }
+        }
+      });
+      new Vue({
+        el: '#app',
+        data: {
+            astronauts: []
+        },
+        methods:{
+            getAll: function(){
+                self = this;
+                $.get('http://localhost:9090/api/v1/astronauts',null,function(data,status,xhr){
+                    self.astronauts = data;
+                    console.log(status);
+                    console.log(xhr);
+                },'json');
+            }
+        },
+        mounted: function(){
+            this.getAll();
+        }
+      });
+  </script>
+</body>
+
+</html>
